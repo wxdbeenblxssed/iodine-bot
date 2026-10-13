@@ -1,2 +1,5 @@
 # Installed node modules
 node_modules
+
+# Strictly private information
+src/data/secrets.json
