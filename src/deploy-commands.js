@@ -4,23 +4,17 @@ const { Token, AppId, GuildId } = require("./data/secrets.json");
 const path = require("node:path");
 const fs = require("node:fs");
 const LoggingLibrary = require("./libraries/logging-library");
+const CommandUtils = require("./utilities/command-utils");
 
 const commands = [];
-
-const commandsPath = path.join(__dirname, "commands");
-const commandFiles = fs.readdirSync(commandsPath);
+const fetchedCommands = CommandUtils.fetchCommands();
 
 const rest = new REST().setToken(Token);
 
-for (const file of commandFiles) {
-     const filePath = path.join(commandsPath, file);
-     const command = require(filePath);
+for (let i = 0; i <= fetchedCommands.length(); i++) {
+     const command = fetchedCommands[i];
 
-     if ("data" in command && "execute" in command) {
-          commands.push(command.data.toJSON());
-     } else {
-          LoggingLibrary.warn(`The command at ${file} is missing required properties.`);
-     }
+     commands.push(command.data.toJSON());
 }
 
 (async () => {
