@@ -23,6 +23,7 @@ function getCurrentTime() {
 
 function getCallerName() {
      const stack = new Error().stack;
+     
      const line = stack.split("at ")[3].trim();
      const basename = path.basename(line);
      const splitBasename = basename.split(":");
