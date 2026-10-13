@@ -16,8 +16,6 @@ for (let i = 0; i <= fetchedCommands.length(); i++) {
 }
 
 client.once(Events.ClientReady, (readyClient) => {
-     LoggingLibrary.message("Starting the Discord bot. Please wait...");
-
      readyClient.user.setPresence({
           activities: [{ name: "created by @wxdbeenblxssed", type: ActivityType.Custom }],
           status: "dnd"
