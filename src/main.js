@@ -1,7 +1,7 @@
 const { Client, Events, GatewayIntentBits, ActivityType, Collection } = require("discord.js");
 const { Token } = require("./data/secrets.json");
 
-const LoggingLibrary = require("./libraries/logging-library");
+const LoggingLibrary = require("./libraries/logging-lib");
 const CommandUtils = require("./utilities/command-utils");
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });

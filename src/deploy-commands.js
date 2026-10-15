@@ -3,7 +3,7 @@ const { Token, AppId, GuildId } = require("./data/secrets.json");
 
 const path = require("node:path");
 const fs = require("node:fs");
-const LoggingLibrary = require("./libraries/logging-library");
+const LoggingLibrary = require("./libraries/logging-lib");
 const CommandUtils = require("./utilities/command-utils");
 
 const commands = [];
