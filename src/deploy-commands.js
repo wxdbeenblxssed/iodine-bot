@@ -1,9 +1,7 @@
 const { REST, Routes } = require("discord.js");
 const { Token, AppId, GuildId } = require("./data/secrets.json");
 
-const path = require("node:path");
-const fs = require("node:fs");
-const LoggingLibrary = require("./libraries/logging-lib");
+const LoggingLib = require("./libraries/logging-lib");
 const CommandUtils = require("./utilities/command-utils");
 
 const commands = [];
@@ -21,8 +19,8 @@ for (let i = 0; i < fetchedCommands.length; i++) {
      try {
           await rest.put(Routes.applicationGuildCommands(AppId, GuildId), { body: commands });
 
-          LoggingLibrary.info("Successfully reloaded all of the bot's slash commands.");
+          LoggingLib.info("Successfully reloaded all of the bot's slash commands.");
      } catch (error) {
-          LoggingLibrary.error(error);
+          LoggingLib.error(error);
      }
 })();

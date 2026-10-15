@@ -1,7 +1,7 @@
 const { Client, Events, GatewayIntentBits, ActivityType, Collection } = require("discord.js");
 const { Token } = require("./data/secrets.json");
 
-const LoggingLibrary = require("./libraries/logging-lib");
+const LoggingLib = require("./libraries/logging-lib");
 const CommandUtils = require("./utilities/command-utils");
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -21,7 +21,7 @@ client.once(Events.ClientReady, (readyClient) => {
           status: "dnd"
      });
 
-     LoggingLibrary.info("Successfully logged into the bot's account. The bot is now ready for operation.");
+     LoggingLib.info("Successfully logged into the bot's account. The bot is now ready for operation.");
 });
 
 client.on(Events.InteractionCreate, async (interaction) => {
@@ -32,7 +32,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
      try {
           await command.execute(interaction);
      } catch (error) {
-          LoggingLibrary.error(error);
+          LoggingLib.error(error);
      }
 });
 
