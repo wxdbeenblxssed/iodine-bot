@@ -9,7 +9,7 @@ client.commands = new Collection();
 
 const fetchedCommands = CommandUtils.fetchCommands();
 
-for (let i = 0; i <= fetchedCommands.length(); i++) {
+for (let i = 0; i < fetchedCommands.length; i++) {
      const command = fetchedCommands[i];
 
      client.commands.set(command.data.name, command);

@@ -3,7 +3,7 @@ const fs = require("node:fs");
 
 const CommandUtils = {};
 
-const commandsPath = path.join(__dirname, "commands");
+const commandsPath = path.join(__dirname, "..", "commands");
 const commandFiles = fs.readdirSync(commandsPath);
 
 CommandUtils.fetchCommands = function() {

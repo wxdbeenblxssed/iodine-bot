@@ -11,7 +11,7 @@ const fetchedCommands = CommandUtils.fetchCommands();
 
 const rest = new REST().setToken(Token);
 
-for (let i = 0; i <= fetchedCommands.length(); i++) {
+for (let i = 0; i < fetchedCommands.length; i++) {
      const command = fetchedCommands[i];
 
      commands.push(command.data.toJSON());
@@ -25,4 +25,4 @@ for (let i = 0; i <= fetchedCommands.length(); i++) {
      } catch (error) {
           LoggingLibrary.error(error);
      }
-});
+})();
