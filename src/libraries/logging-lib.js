@@ -1,6 +1,6 @@
 const path = require("node:path");
 
-const LoggingLibrary = {};
+const LoggingLib = {};
 
 function getCurrentTime() {
      const date = new Date();
@@ -42,9 +42,9 @@ function createLogger(logLevel, Logger) {
      }
 }
 
-LoggingLibrary.message = createLogger("message", { log: console.log });
-LoggingLibrary.info = createLogger("info", { log: console.log });
-LoggingLibrary.warn = createLogger("warn", { log: console.warn });
-LoggingLibrary.error = createLogger("error", { log: console.error });
+LoggingLib.message = createLogger("message", { log: console.log });
+LoggingLib.info = createLogger("info", { log: console.log });
+LoggingLib.warn = createLogger("warn", { log: console.warn });
+LoggingLib.error = createLogger("error", { log: console.error });
 
-module.exports = LoggingLibrary;
+module.exports = LoggingLib;
