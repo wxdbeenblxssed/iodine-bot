@@ -1,0 +1,6 @@
+# Installed node modules
+node_modules
+
+# Strictly secret information
+src/data/secrets.json
+src/data/guilds

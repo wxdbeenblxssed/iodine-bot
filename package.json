@@ -1,0 +1,7 @@
+{
+  "type": "commonjs",
+  "dependencies": {
+    "discord.js": "^14.27.0",
+    "jsonfile": "^6.2.1"
+  }
+}
