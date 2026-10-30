@@ -4,10 +4,11 @@ const FontUtils = require("../../../utils/font-utils");
 const _module = {};
 
 _module.execute = async function(interaction) {
-     const name = interaction.options.getString("name");
+     const language = interaction.options.getString("language");
      const guild = interaction.guild;
+     const member = interaction.member;
 
-     const voiceChannel = interaction.member.voice.channel;
+     const voiceChannel = member.voice.channel;
      const personalIds = guild.memFetch("JTCPersonalChannelIds");
      const format = guild.memFetch("JTCFormat"); 
 
@@ -17,8 +18,8 @@ _module.execute = async function(interaction) {
      }
      if (!personalIds[voiceChannel.id]) return;
 
-     if (personalIds[voiceChannel.id] == interaction.member.user.id) {
-          const newName = FontUtils.setFont("fds", format.replace("%name%", name));
+     if (personalIds[voiceChannel.id] == member.user.id) {
+          const newName = FontUtils.setFont("fds", format.replace("%name%", `${language} - Personal Channel`).toLowerCase());
 
           await voiceChannel.setName(newName);
      } else {

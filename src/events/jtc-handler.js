@@ -12,7 +12,7 @@ async function createPersonalChannel(guild, newState) {
      const member = newState.member;
 
      const personalChannel = await guild.channels.create({
-          name: FontUtils.setFont("fds", format.replace("%name%", `${member.user.displayName}'s Channel`).toLowerCase()),
+          name: FontUtils.setFont("fds", format.replace("%name%", `?? - Personal Channel`).toLowerCase()),
           type: ChannelType.GuildVoice,
 
           parent: categoryId

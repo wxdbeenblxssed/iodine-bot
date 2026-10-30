@@ -17,7 +17,7 @@ const _command = {
           )
           .addSubcommand(subcommand => subcommand
                .setName("setformat")
-               .setDescription("The formatting of the newly created channels.")
+               .setDescription("Sets the formatting of the newly created channels.")
                .addStringOption(option => option
                     .setName("schema")
                     .setDescription("The schema of the formatting. Use %name% to input the channel name.")
@@ -25,11 +25,15 @@ const _command = {
                )
           )
           .addSubcommand(subcommand => subcommand
-               .setName("setname")
-               .setDescription("Sets the name of the channel you're currently in (Ownership Required).")
+               .setName("setlanguage")
+               .setDescription("Sets the language of the channel you're currently in (Ownership Required).")
                .addStringOption(option => option
-                    .setName("name")
-                    .setDescription("The new name of the channel.")
+                    .setName("language")
+                    .setDescription("The new language of the channel.")
+                    .setChoices(
+                         { name: "Polish", value: "PL" },
+                         { name: "English", value: "EN" }
+                    )
                     .setRequired(true)
                )
           )
