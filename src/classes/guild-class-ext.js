@@ -15,13 +15,7 @@ function getMemoryFile(guildId) {
 }
 
 Guild.prototype.addInfraction = function(userId, modId, type, reason) {
-     const infraction = {
-          type: type,
-          userId: userId,
-          modId: modId,
-
-          reason: reason
-     };
+     const infraction = { type: type, userId: userId, modId: modId, reason: reason };
 
      const infractions = this.memFetch("Infractions");
      infractions.push(infraction);
