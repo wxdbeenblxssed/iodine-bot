@@ -7,7 +7,7 @@ const _command = {
           .setDescription("Group of memory handling commands.")
           .addSubcommand(subcommand => subcommand
                .setName("dump")
-               .setDescription("Dumps all memory keys and their values with little formatting.")
+               .setDescription("Dumps all memory keys and their values with very little formatting.")
           )
 };
 

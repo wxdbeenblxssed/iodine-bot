@@ -1,4 +1,3 @@
-const jsonfile = require("jsonfile");
 const fs = require("node:fs");
 const path = require("node:path");
 const LoggingUtils = require("../../../utils/logging-utils");
@@ -13,7 +12,6 @@ _module.execute = async function(interaction) {
 
      if (fs.existsSync(filePath)) {
           const file = require(filePath);
-
           let concatMessage = "";
 
           for (const key in file) {
