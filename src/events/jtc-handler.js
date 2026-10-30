@@ -1,5 +1,5 @@
 const { Events, ChannelType } = require("discord.js");
-const LoggingUtils = require("../utils/logging-utils");
+const FontUtils = require("../utils/font-utils");
 
 const _module = {
      name: Events.VoiceStateUpdate,
@@ -12,7 +12,7 @@ async function createPersonalChannel(guild, newState) {
      const member = newState.member;
 
      const personalChannel = await guild.channels.create({
-          name: format.replace("%name%", `${member.user.displayName}'s Channel`),
+          name: FontUtils.setFont("fds", format.replace("%name%", `${member.user.displayName}'s Channel`).toLowerCase()),
           type: ChannelType.GuildVoice,
 
           parent: categoryId
@@ -35,6 +35,12 @@ async function removeEmptyChannel(guild, oldState) {
 
           await personalChannel.delete();
      }
+}
+
+_module.init = function(client) {
+     client.guilds.cache.forEach(guild => {
+          guild.memSet("JTCPersonalChannelIds", {});
+     });
 }
 
 _module.execute = async function(oldState, newState) {

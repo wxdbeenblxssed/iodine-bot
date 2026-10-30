@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, ChannelType } = require("discord.js");
+const { SlashCommandBuilder, ChannelType, subtext } = require("discord.js");
 const SubcommandUtils = require("../../utils/subcommand-utils");
 
 const _command = {
@@ -21,6 +21,15 @@ const _command = {
                .addStringOption(option => option
                     .setName("schema")
                     .setDescription("The schema of the formatting. Use %name% to input the channel name.")
+                    .setRequired(true)
+               )
+          )
+          .addSubcommand(subcommand => subcommand
+               .setName("setname")
+               .setDescription("Sets the name of the channel you're currently in (Ownership Required).")
+               .addStringOption(option => option
+                    .setName("name")
+                    .setDescription("The new name of the channel.")
                     .setRequired(true)
                )
           )

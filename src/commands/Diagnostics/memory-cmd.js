@@ -8,6 +8,10 @@ const _command = {
           .addSubcommand(subcommand => subcommand
                .setName("dump")
                .setDescription("Dumps all memory keys and their values with very little formatting.")
+               .addStringOption(option => option
+                    .setName("key")
+                    .setDescription("The specific key to dump if it's an object.")
+               )
           )
 };
 
