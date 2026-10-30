@@ -8,7 +8,7 @@ _module.handleChannelLogic = async function(interaction, guild, callback) {
      const personalIds = guild.memFetch("JTCPersonalChannelIds");
 
      if (!voiceChannel) {
-          LoggingUtils.error("Can't set the channel language as the member isn't connected to one.");
+          LoggingUtils.error("Can't set the channel config as the member isn't connected to one.");
           return;
      }
      if (!personalIds[voiceChannel.id]) return;
@@ -16,7 +16,7 @@ _module.handleChannelLogic = async function(interaction, guild, callback) {
      if (personalIds[voiceChannel.id] == member.user.id) {
           await callback(voiceChannel);
      } else {
-          LoggingUtils.warn("Couldn't change the channel language as the member doesn't own it.");
+          LoggingUtils.warn("Couldn't change the channel config as the member doesn't own it.");
      }
 }
 
