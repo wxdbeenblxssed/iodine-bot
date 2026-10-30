@@ -13,7 +13,7 @@ _module.execute = async function(interaction) {
      const format = guild.memFetch("JTCFormat"); 
 
      if (!voiceChannel) {
-          LoggingUtils.error("Can't set the channel name as the member isn't connected to one.");
+          LoggingUtils.error("Can't set the channel language as the member isn't connected to one.");
           return;
      }
      if (!personalIds[voiceChannel.id]) return;
@@ -23,7 +23,7 @@ _module.execute = async function(interaction) {
 
           await voiceChannel.setName(newName);
      } else {
-          LoggingUtils.warn("Couldn't change the channel name as the member doesn't own it.");
+          LoggingUtils.warn("Couldn't change the channel language as the member doesn't own it.");
      }
 }
 
