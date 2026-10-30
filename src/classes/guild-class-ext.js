@@ -25,7 +25,7 @@ Guild.prototype.addInfraction = function(userId, modId, type, reason) {
 
      const infractions = this.memFetch("Infractions");
      infractions.push(infraction);
-     this.memSet("Infraction", infractions);
+     this.memSet("Infractions", infractions);
 }
 
 Guild.prototype.memSet = function(key, value) {
