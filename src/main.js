@@ -14,7 +14,7 @@ function addMissingGuildFiles() {
      client.guilds.cache.forEach(guild => {
           const guildFile = path.join(guildsFolder, `${guild.id}.json`);
 
-          if (!fs.existsSync(guildFile)) jsonfile.writeFileSync(guildFile, { Infractions: {} });
+          if (!fs.existsSync(guildFile)) jsonfile.writeFileSync(guildFile, { Infractions: [] });
      });
 }
 

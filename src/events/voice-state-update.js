@@ -37,12 +37,6 @@ async function removeEmptyChannel(guild, oldState) {
      }
 }
 
-_module.init = function(client) {
-     client.guilds.cache.forEach(guild => {
-          guild.memSet("JTCPersonalChannelIds", {});
-     });
-}
-
 _module.execute = async function(oldState, newState) {
      const guild = oldState.guild ?? newState.guild;
      const channelId = guild.memFetch("JTCChannelId");
