@@ -6,7 +6,7 @@ _module.execute = async function(interaction) {
      const category = interaction.options.getChannel("category");
      const guild = interaction.guild;
 
-     const jtcVoiceChannel = await guild.channels.create({
+     const voiceChannel = await guild.channels.create({
           name: "Join To Create",
           type: ChannelType.GuildVoice,
 
@@ -14,7 +14,7 @@ _module.execute = async function(interaction) {
      });
 
      guild.memSet("JTCCategoryId", category.id);
-     guild.memSet("JTCChannelId", jtcVoiceChannel.id);
+     guild.memSet("JTCChannelId", voiceChannel.id);
      guild.memSet("JTCPersonalChannelIds", {});
 }
 
