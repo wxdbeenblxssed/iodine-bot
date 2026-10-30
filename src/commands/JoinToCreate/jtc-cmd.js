@@ -37,6 +37,15 @@ const _command = {
                     .setRequired(true)
                )
           )
+          .addSubcommand(subcommand => subcommand
+               .setName("setlimit")
+               .setDescription("Sets the limit of how many people can join the channel at once.")
+               .addIntegerOption(option => option
+                    .setName("limit")
+                    .setDescription("The maximum number of people allowed in the voice channel.")
+                    .setRequired(true)
+               )
+          )
 };
 
 _command.execute = SubcommandUtils.createExecute(__dirname, _command);
