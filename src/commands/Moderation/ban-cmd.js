@@ -31,7 +31,7 @@ _command.execute = async function(interaction) {
      if (isFlush) deleteSeconds = 604800;
 
      await member.ban({ deleteMessageSeconds: deleteSeconds, reason: reason }).then(() => {
-          guild.addInfraction(user.id, "ban", reason);
+          guild.addInfraction(user.id, interaction.member.user.id, "ban", reason);
      });
 }
 

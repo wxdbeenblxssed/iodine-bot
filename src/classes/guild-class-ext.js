@@ -4,8 +4,6 @@ const jsonfile = require("jsonfile");
 const fs = require("node:fs");
 const LoggingUtils = require("../utils/logging-utils");
 
-Guild.prototype.memory = {};
-
 function getMemoryFile(guildId) {
      const memoryPath = path.join(__dirname, "..", "data", "guilds", `${guildId}.json`);
 
@@ -16,11 +14,12 @@ function getMemoryFile(guildId) {
      }
 }
 
-Guild.prototype.addInfraction = function(userId, type, reason) {
+Guild.prototype.addInfraction = function(userId, modId, type, reason) {
      const infraction = {
-          userId: userId,
-
           type: type,
+          userId: userId,
+          modId: modId,
+
           reason: reason
      };
 

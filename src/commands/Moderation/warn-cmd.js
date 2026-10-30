@@ -20,7 +20,7 @@ _command.execute = async function(interaction) {
      const reason = interaction.options.getString("reason") ?? "No reason provided.";
      const guild = interaction.guild;
 
-     guild.addInfraction(user.id, "warn", reason);
+     guild.addInfraction(user.id, interaction.member.user.id, "warn", reason);
 }
 
 module.exports = _command;

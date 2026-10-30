@@ -23,7 +23,7 @@ _command.execute = async function(interaction) {
      const member = guild.members.cache.get(user.id);
      
      await member.kick(reason).then(() => {
-          guild.addInfraction(user.id, "kick", reason);
+          guild.addInfraction(user.id, interaction.member.user.id, "kick", reason);
      });
 }
 
